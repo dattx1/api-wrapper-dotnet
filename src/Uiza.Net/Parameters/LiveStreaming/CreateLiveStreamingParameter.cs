@@ -44,7 +44,7 @@ namespace Uiza.Net.Parameters
         /// <summary>
         /// thumbnail
         /// </summary>
-        [JsonProperty("thumbnail")] 
+        [JsonProperty("thumbnail")]
         public string Thumbnail { get; set; }
 
         /// <summary>
@@ -65,5 +65,35 @@ namespace Uiza.Net.Parameters
         [JsonProperty("resourceMode")]
         public ResourceModes ResourceMode { get; set; }
 
+        /// <summary>
+        /// Info to share live into social
+        /// </summary>
+        [JsonProperty("linkPublishSocial")]
+        public List<InfoShareSocial> LinkPublishSocial { get; set; }
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class InfoShareSocial
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("dropdown")]
+        public TypeOfSocials Dropdown { get; set; }
+
+        /// <summary>
+        /// stream URL.
+        /// </summary>
+        [JsonProperty("address")]
+        public string Address { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("streamKey")]
+        public string StreamKey { get; set; }
     }
 }

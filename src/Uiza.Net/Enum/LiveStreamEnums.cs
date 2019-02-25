@@ -57,4 +57,23 @@ namespace Uiza.Net.Enums
         /// </summary>
         Encode,
     }
+
+    /// <summary>
+    /// type of social (youtube/facebook).
+    /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum TypeOfSocials
+    {
+        /// <summary>
+        ///  type of social youtube
+        /// </summary>
+        [EnumMember(Value = "youtube")]
+        Youtube,
+
+        /// <summary>
+        ///  type of social facebook
+        /// </summary>
+        [EnumMember(Value = "facebook")]
+        FaceBook,
+    }
 }
