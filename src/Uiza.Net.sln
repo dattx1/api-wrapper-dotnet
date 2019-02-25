@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uiza.Net45.ConsoleTest", "U
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uiza.NetCore.ConsoleTest", "Uiza.NetCore.Console\Uiza.NetCore.ConsoleTest.csproj", "{E9EFB304-F014-4478-87F1-47E35294AB24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UizaTest", "UizaTest\UizaTest.csproj", "{757F5E46-BC45-4E07-814F-8DAB0E7240B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UizaTest", "UizaTest\UizaTest.csproj", "{757F5E46-BC45-4E07-814F-8DAB0E7240B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91CB78BC-6817-4F34-B12E-4B19AE50E130}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE.txt = ..\LICENSE.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
