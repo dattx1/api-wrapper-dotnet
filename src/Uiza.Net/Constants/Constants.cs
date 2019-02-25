@@ -17,6 +17,7 @@
             public const string ENTITY_STATUS_PUBLISH = "media/entity/publish/status";
             public const string ENTITY_PUBLISH = "media/entity/publish";
             public const string ENTITY_SEARCH = "media/entity/search";
+            public const string CALLBACK = "media/entity/callback";
         }
 
         internal struct ErrorMessages

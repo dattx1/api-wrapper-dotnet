@@ -39,5 +39,13 @@ namespace Uiza.Net
             public const string UPDATE = "update-storage";
             public const string REMOVE = "remove-storage";
         }
+
+        internal struct CALLBACK
+        {
+            public const string CREATE = "create-a-callback";
+            public const string RETRIEVE = "retrieve-a-callback";
+            public const string UPDATE = "update-a-callback";
+            public const string DELETE = "delete-a-callback";
+        }
     }
 }

@@ -22,9 +22,8 @@ namespace Uiza.Net.Services
             }
         }
 
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ICategoryService Category
         {
@@ -49,6 +48,19 @@ namespace Uiza.Net.Services
             }
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        public static ICallbackService Callback
+        {
+            get
+            {
+                if (_storage == null)
+                    _callback = new CallbackService();
+                return _callback;
+            }
+        }
+
         #endregion PUBLIC PROPERTIES
 
         #region PRIVATE PROPERTY
@@ -56,6 +68,7 @@ namespace Uiza.Net.Services
         private static IEntityService _entity;
         private static ICategoryService _category;
         private static IStorageService _storage;
+        private static ICallbackService _callback;
 
         #endregion PRIVATE PROPERTY
     }
