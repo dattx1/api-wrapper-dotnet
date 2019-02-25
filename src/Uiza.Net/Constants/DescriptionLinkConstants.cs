@@ -47,5 +47,19 @@ namespace Uiza.Net
             public const string UPDATE = "update-a-callback";
             public const string DELETE = "delete-a-callback";
         }
+
+        internal struct LIVE_STREAMING
+        {
+            public const string CREATE = "create-a-live-event";
+            public const string RETRIEVE = "retrieve-a-live-event";
+            public const string UPDATE = "update-a-live-event";
+            public const string START_A_LIVE_FEED = "start-a-live-feed";
+            public const string GET_VIEW = "get-view-of-live-feed";
+            public const string STOP_A_LIVE_FEED = "stop-a-live-feed";
+            public const string LIST_ALL_RECORDED_FILES = "list-all-recorded-files";
+            public const string DELETE_A_RECORD_FILE = "delete-a-record-file";
+            public const string CONVERT_INTO_VOD = "convert-into-vod";
+        }
+
     }
 }

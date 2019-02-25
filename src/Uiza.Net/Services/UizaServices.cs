@@ -61,6 +61,19 @@ namespace Uiza.Net.Services
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ILiveStreaming LiveStreaming
+        {
+            get
+            {
+                if (_liveStreaming == null)
+                    _liveStreaming = new LiveStreamingServices();
+                return _liveStreaming;
+            }
+        }
+
         #endregion PUBLIC PROPERTIES
 
         #region PRIVATE PROPERTY
@@ -69,6 +82,7 @@ namespace Uiza.Net.Services
         private static ICategoryService _category;
         private static IStorageService _storage;
         private static ICallbackService _callback;
+        private static ILiveStreaming _liveStreaming;
 
         #endregion PRIVATE PROPERTY
     }

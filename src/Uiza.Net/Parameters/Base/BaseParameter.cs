@@ -13,6 +13,7 @@ namespace Uiza.Net.Parameters
         /// <summary>
         /// 
         /// </summary>
+        [JsonIgnore]
         private Dictionary<string, object> extraParams = new Dictionary<string, object>();
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace Uiza.Net.Parameters
             set { this.extraParams = value; }
         }
 
+        [JsonIgnore]
         internal string DescriptionLink { get; set; }
 
         /// <summary>

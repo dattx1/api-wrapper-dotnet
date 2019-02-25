@@ -261,6 +261,10 @@ The[`UizaExceptionResponse`](src/Uiza.Net/UizaException/UizaExceptionResponse.cs
     }
 ```
 
+## Test
+Uiza use Xunit to Unitest and OpenCover to test Code Coverage
+See details [here](docs/Test.md).
+
 ## Usage
 
 ```Csharp
@@ -327,6 +331,13 @@ var result = UizaServices.Storage.Create(new CreateStogeParameter()
 });
 Console.WriteLine(string.Format("Add New Storage Id = {0} Success", result.Data.id));
 ```
+
+## Live Streaming
+These APIs used to create and manage live streaming event.
+* When a Live is not start : it's named as `Event`.
+* When have an `Event` , you can start it : it's named as `Feed`.
+
+See details [here](docs/LiveStreaming.md).
 
 ## Contribution Guidelines
 

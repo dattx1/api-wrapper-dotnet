@@ -27,7 +27,7 @@ namespace UizaTest.Services
         {
             foreach (var statusCode in this.StatusCodes)
             {
-                mockService.Setup(_ => _.Create(It.IsAny<CreateCallbackParameter>())).Throws(BaseMockResponse.ErrorResponse());
+                mockService.Setup(_ => _.Create(It.IsAny<CreateCallbackParameter>())).Throws(BaseMockResponse.ErrorResponse(statusCode));
                 var ex = Assert.Throws<UizaException>(() => mockService.Object.Create(CallbackMockParameter.CreateInValidCallbackParameter()));
                 Assert.Equal(statusCode, ex.UizaInnerException.Code);
             }
@@ -46,7 +46,7 @@ namespace UizaTest.Services
         {
             foreach (var statusCode in this.StatusCodes)
             {
-                mockService.Setup(_ => _.Retrieve(It.IsAny<string>())).Throws(BaseMockResponse.ErrorResponse());
+                mockService.Setup(_ => _.Retrieve(It.IsAny<string>())).Throws(BaseMockResponse.ErrorResponse(statusCode));
                 var ex = Assert.Throws<UizaException>(() => mockService.Object.Retrieve(""));
                 Assert.Equal(statusCode, ex.UizaInnerException.Code);
             }
@@ -65,7 +65,7 @@ namespace UizaTest.Services
         {
             foreach (var statusCode in this.StatusCodes)
             {
-                mockService.Setup(_ => _.Delete(It.IsAny<string>())).Throws(BaseMockResponse.ErrorResponse());
+                mockService.Setup(_ => _.Delete(It.IsAny<string>())).Throws(BaseMockResponse.ErrorResponse(statusCode));
                 var ex = Assert.Throws<UizaException>(() => mockService.Object.Delete(""));
                 Assert.Equal(statusCode, ex.UizaInnerException.Code);
             }
@@ -84,7 +84,7 @@ namespace UizaTest.Services
         {
             foreach (var statusCode in this.StatusCodes)
             {
-                mockService.Setup(_ => _.Update(It.IsAny<UpdateCallbackParameter>())).Throws(BaseMockResponse.ErrorResponse());
+                mockService.Setup(_ => _.Update(It.IsAny<UpdateCallbackParameter>())).Throws(BaseMockResponse.ErrorResponse(statusCode));
                 var ex = Assert.Throws<UizaException>(() => mockService.Object.Update(CallbackMockParameter.UpdateInValidCallbackParameter()));
                 Assert.Equal(statusCode, ex.UizaInnerException.Code);
             }

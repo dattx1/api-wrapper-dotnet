@@ -18,6 +18,11 @@
             public const string ENTITY_PUBLISH = "media/entity/publish";
             public const string ENTITY_SEARCH = "media/entity/search";
             public const string CALLBACK = "media/entity/callback";
+            public const string LIVE_STREAMING = "live/entity";
+            public const string LIVE_STREAMING_FEED = "live/entity/feed";
+            public const string LIVE_STREAMING_GET_VIEW = "live/entity/tracking/current-view";
+            public const string LIVE_STREAMING_RECORDED = "live/entity/dvr";
+            public const string LIVE_STREAMING_CONVERT_VOD = "live/entity/dvr/convert-to-vod";
         }
 
         internal struct ErrorMessages

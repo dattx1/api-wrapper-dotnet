@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace Uiza.Net.UizaHandleException
         /// 
         /// </summary>
         [JsonProperty("data")]
-        public object Data { get; set; }
+        public dynamic Data { get; set; }
 
         /// <summary>
         /// 
@@ -61,10 +62,8 @@ namespace Uiza.Net.UizaHandleException
         {
             get
             {
-                if (Data.IsJArray())
+                if (Data is JArray)
                     return JsonConvert.DeserializeObject<List<ErrorData>>(JsonConvert.SerializeObject(Data));
-                if (Data is IList<ErrorData>)
-                    return (List<ErrorData>)Data;
                 if (Data is string)
                     return new List<ErrorData>() {
                         new ErrorData()
@@ -73,6 +72,11 @@ namespace Uiza.Net.UizaHandleException
                             Type = Type
                         }
                     };
+                if (Data is JObject)
+                    return new List<ErrorData>() {
+                         JsonConvert.DeserializeObject<ErrorData>(JsonConvert.SerializeObject(Data))
+                    };
+
                 return new List<ErrorData>() {
                     JsonConvert.DeserializeObject<ErrorData>(JsonConvert.SerializeObject(Data))
                 };

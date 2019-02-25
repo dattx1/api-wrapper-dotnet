@@ -17,13 +17,13 @@ namespace UizaTest.MockResponse
             return new UizaData() { Data = data };
         }
 
-        public static UizaException ErrorResponse()
+        public static UizaException ErrorResponse(int statusCode)
         {
             return new UizaException()
             {
                 UizaInnerException = new UizaExceptionResponse()
                 {
-                    Code = (int)ResponseCodeEnums.Unprocessable
+                    Code = (int)statusCode
                 }
             };
         }
@@ -31,11 +31,8 @@ namespace UizaTest.MockResponse
         public static UizaData ListSuccessResponse()
         {
             dynamic firstObj = new JObject();
-            firstObj.id = Guid.NewGuid().ToString();
             dynamic seconrdObj = new JObject();
-            seconrdObj.id = Guid.NewGuid().ToString();
             dynamic metaData = new JObject();
-            metaData.total = 2;
             return new UizaData()
             {
                 Data = new List<dynamic>
